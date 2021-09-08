@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #bod {
+        background-color: white;
+        height: 100%;
+        margin: 0
+    }
+
+    #title {
+        text-align: center;
+        height: 10vh;
+        /* border: 2px solid red; */
+    }
+
+    #mainArea {
+        /* border: 2px solid green; */
+        height: 650px;
+        width: 100vw;
+    }
+
+    /* box housing box container and artboard*/
+    #contentBox {
+        margin: auto;
+        height: 100%;
+        width: 1000px;
+        background-color: #DCDCDC;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+    }
+
+    #boxesContainer {
+         /* border: 1px solid black;  */
+        height: 300px;
+        width: 75px;
+        display: inline-block;
+        justify-content: center;
+        position: relative;
+        left: -50px;
+    }
+
+
+    /*Inner circle */
+    #artboard {
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        border: 5px solid black;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Shapes within artboard*/
+
+    #shape1 {
+        height: 200px;
+        width: 150px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 4;
+        left: 30px;
+    }
+
+    #shape2 {
+        height: 300px;
+        width: 300px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 4;
+        top: 10px;
+        left: 300px;
+        transform: rotate(35deg)
+    }
+
+    #shape3 {
+        height: 200px;
+        width: 200px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 5;
+        top: 200px;
+        left: -10px;
+        transform: rotate(60deg)
+    }
+
+    #shape4 {
+        height: 400px;
+        width: 200px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 7;
+        top: 200px;
+        left: 500px;
+    }
+
+    #shape5 {
+        height: 400px;
+        width: 200px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 6;
+        top: 300px;
+        left: 400px;
+        transform: rotate(60deg)
+    }
+
+    #shape6 {
+        height: 300px;
+        width: 250px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 3;
+        top: 200px;
+        left: 300px;
+        transform: rotate(10deg)
+    }
+
+    #shape7 {
+        height: 200px;
+        width: 350px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 3;
+        left: 30px;
+        top: -40px;
+        transform: rotate(-13deg)
+    }
+
+    #shape8 {
+        height: 200px;
+        width: 350px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 3;
+        left: 35px;
+        top: 480px;
+        transform: rotate(-7deg)
+    }
+
+    #shape9 {
+        height: 200px;
+        width: 200px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 3;
+        left: -50px;
+        top: 20px;
+        transform: rotate(-13deg)
+    }
+
+    #shape10 {
+        height: 400px;
+        width: 400px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 2;
+        left: 80px;
+        top: 20px;
+        transform: rotate(13deg)
+    }
+
+    #shape11 {
+        height: 400px;
+        width: 400px;
+        background-color: white;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 1;
+        left: 10px;
+        top: 150px;
+        transform: rotate(13deg)
+    }
+
+
+    /*Boxes for choosing colors*/
+    #red {
+        background-color: red;
+    }
+
+    #yellow {
+        background-color: yellow;
+    }
+
+    #blue {
+        background-color: blue;
+    }
+
+    #white {
+        background-color: white;
+    }
+
+    /* class affects 'box' divs */
+    .color {
+        margin: 10px 10px;
+        height: 50px;
+        width: 50px;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    .picker {
+        font-family: Helvetica, Arial, Sans-Serif;
+        border: none;
+        margin: 10px 10px;
+    }
+</style>
+
+<script>
+    let rainbow = "white"
+    function colorPick(color) {
+        // if color = red set to red 
+        console.log(color)
+        rainbow = color
+        //document.getElementById(id).style.backgroundColor  ;
+    };
+
+    function colorDrop(id) {
+        document.getElementById(id).style.background = rainbow
+        // console.log(id)
+    }
+</script>
+
+<body id="bod">
+    <div id="title">
+        Color the boxes!
+
+    </div>
+    <div id="mainArea">
+        <div id="contentBox">
+            <div id="boxesContainer">
+                <div class="picker"> Color Picker</div> 
+                <div onclick="colorPick(id)" class="color" id="red">
+
+                </div>
+                <div onclick="colorPick(id)" class="color" id="yellow">
+
+                </div>
+                <div onclick="colorPick(id)" class="color" id="blue">
+
+                </div>
+                <div onclick="colorPick(id)" class="color" id="white">
+
+                </div>
+            </div>
+
+            <div id="artboard">
+                <div onclick="colorDrop(id)" id="shape1">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape2">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape3">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape4">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape5">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape6">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape7">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape8">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape9">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape10">
+
+                </div>
+                <div onclick="colorDrop(id)" id="shape11">
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
